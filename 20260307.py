@@ -28,3 +28,5 @@ plt.tight_layout()
 plt.savefig('result_plot.png')
 print("분석 완료!")
 plt.show()
+
+![결과 그래프](result_plot.png)
