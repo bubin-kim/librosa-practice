@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 print("소리 데이터를 불러오는 중...")
-d, sr = librosa.load(librosa.ex('choice')) 
+d, sr = librosa.load(librosa.ex('choice'))  # d: 오디오 신호 / sr = 샘플링 레이트 (초당 샘플수)
 
 print(f"샘플링 레이트(sr): {sr}")
 print(f"데이터 길이(d): {len(d)}개")
@@ -16,7 +16,7 @@ librosa.display.waveshow(d, sr=sr)
 plt.title('Visualizing Sound Variations')
 
 S = librosa.feature.melspectrogram(y=d, sr=sr)
-S_dB = librosa.power_to_db(S, ref=np.max)
+S_dB = librosa.power_to_db(S, ref=np.max)  # 데시벨 단위로 변환
 
 plt.subplot(2, 1, 2)
 librosa.display.specshow(S_dB, sr=sr, x_axis='time', y_axis='mel')
